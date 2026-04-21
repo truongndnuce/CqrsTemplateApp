@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.3"/>
+        <PackageReference Include="Scalar.AspNetCore" Version="2.6.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\CqrsApp.Application\CqrsApp.Application.csproj" />
+      <ProjectReference Include="..\CqrsApp.Infrastructure\CqrsApp.Infrastructure.csproj" />
+      <ProjectReference Include="..\CqrsApp.Persistence\CqrsApp.Persistence.csproj" />
+      <ProjectReference Include="..\CqrsApp.Presentation\CqrsApp.Presentation.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Controllers\" />
+    </ItemGroup>
+
+</Project>
