@@ -6,4 +6,18 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="Abtractions\" />
+      <Folder Include="Behaviors\" />
+      <Folder Include="DependencyInjection\Extentions\" />
+      <Folder Include="DependencyInjection\Options\" />
+      <Folder Include="Usecases\V1\Commands\" />
+      <Folder Include="Usecases\V1\Queries\" />
+      <Folder Include="Usecases\V2\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="14.1.0" />
+    </ItemGroup>
+
 </Project>

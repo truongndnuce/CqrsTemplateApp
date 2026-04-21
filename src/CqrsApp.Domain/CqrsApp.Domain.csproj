@@ -6,4 +6,10 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="Abtractions\Entities\" />
+      <Folder Include="Abtractions\Repositories\" />
+      <Folder Include="Enumarations\" />
+    </ItemGroup>
+
 </Project>
