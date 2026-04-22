@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CqrsApp.Persistence", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CqrsApp.Architecture.Tests", "test\CqrsApp.Architecture.Tests\CqrsApp.Architecture.Tests.csproj", "{3602AF0A-2BE6-4D6D-9869-7381BC216C01}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contract", "src\Contract\Contract.csproj", "{A2899C80-65AC-4F76-B96D-35A61A8FBE54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,7 @@ Global
 		{BC239F53-5E2B-42B7-81C5-B3328E3E75AD} = {F541E623-4CA4-4EC6-9ACA-E50B1B4A9806}
 		{F23D5B66-54B5-4493-8395-ECE9806E8E8E} = {F541E623-4CA4-4EC6-9ACA-E50B1B4A9806}
 		{3602AF0A-2BE6-4D6D-9869-7381BC216C01} = {88C3372B-A414-48D1-9365-A92E12821EE4}
+		{A2899C80-65AC-4F76-B96D-35A61A8FBE54} = {F541E623-4CA4-4EC6-9ACA-E50B1B4A9806}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{8C67E2E8-A7B8-4EF1-93BA-0025F0CA486C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -63,5 +66,9 @@ Global
 		{3602AF0A-2BE6-4D6D-9869-7381BC216C01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3602AF0A-2BE6-4D6D-9869-7381BC216C01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3602AF0A-2BE6-4D6D-9869-7381BC216C01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2899C80-65AC-4F76-B96D-35A61A8FBE54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2899C80-65AC-4F76-B96D-35A61A8FBE54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2899C80-65AC-4F76-B96D-35A61A8FBE54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2899C80-65AC-4F76-B96D-35A61A8FBE54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

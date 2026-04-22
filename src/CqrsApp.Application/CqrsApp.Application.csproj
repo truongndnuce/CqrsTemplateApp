@@ -7,12 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Abtractions\" />
+      <Folder Include="Abtractions\Message\" />
       <Folder Include="Behaviors\" />
       <Folder Include="DependencyInjection\Extentions\" />
       <Folder Include="DependencyInjection\Options\" />
-      <Folder Include="Usecases\V1\Commands\" />
-      <Folder Include="Usecases\V1\Queries\" />
+      <Folder Include="Usecases\V1\Commands\Order\" />
+      <Folder Include="Usecases\V1\Queries\Order\" />
       <Folder Include="Usecases\V2\" />
     </ItemGroup>
 
