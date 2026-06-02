@@ -7,10 +7,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Abtractions\Entities\" />
-      <Folder Include="Abtractions\Repositories\" />
-      <Folder Include="Enumarations\" />
-      <Folder Include="Shared\" />
+      <PackageReference Include="MediatR" Version="14.1.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Service\" />
     </ItemGroup>
 
 </Project>
