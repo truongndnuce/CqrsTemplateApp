@@ -1,8 +1,8 @@
-using MediatR;
+using Contract.Abtractions.Message;
 
 namespace CqrsApp.Application.Usecases.V1.Commands.Product;
 
-public class CreateProductCommand : IRequest
+public class CreateProductCommand : ICommand
 {
     
 }

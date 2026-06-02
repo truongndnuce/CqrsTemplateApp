@@ -8,7 +8,6 @@
 
     <ItemGroup>
       <Folder Include="Abtractions\Message\" />
-      <Folder Include="Behaviors\" />
       <Folder Include="DependencyInjection\Extentions\" />
       <Folder Include="DependencyInjection\Options\" />
       <Folder Include="Usecases\V1\Commands\Order\" />
@@ -17,7 +16,13 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="FluentValidation" Version="12.1.1" />
       <PackageReference Include="MediatR" Version="14.1.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Contract\Contract.csproj" />
+      <ProjectReference Include="..\CqrsApp.Domain\CqrsApp.Domain.csproj" />
     </ItemGroup>
 
 </Project>

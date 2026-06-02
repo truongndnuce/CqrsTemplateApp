@@ -10,6 +10,7 @@
       <Folder Include="Abtractions\Entities\" />
       <Folder Include="Abtractions\Repositories\" />
       <Folder Include="Enumarations\" />
+      <Folder Include="Shared\" />
     </ItemGroup>
 
 </Project>
