@@ -1,4 +1,6 @@
-﻿using CqrsApp.Persistence.DependencyInjection.Options ;
+﻿using CqrsApp.Domain.Entities.Identity ;
+using CqrsApp.Persistence.DependencyInjection.Options ;
+using Microsoft.AspNetCore.Identity ;
 using Microsoft.EntityFrameworkCore ;
 using Microsoft.Extensions.Configuration ;
 using Microsoft.Extensions.DependencyInjection ;
@@ -29,6 +31,24 @@ public static class ServiceCollectionExtentions
                   maxRetryDelay: options.CurrentValue.MaxRetryDelay,
                   errorNumbersToAdd: options.CurrentValue.ErrorNumbersToAdd))
               .MigrationsAssembly(typeof(ApplicationDbContext).Assembly.GetName().Name));
+    });
+    
+    services.AddIdentityCore<AppUser>()
+      .AddRoles<AppRole>()
+      .AddEntityFrameworkStores<ApplicationDbContext>();
+
+    services.Configure<IdentityOptions>(options =>
+    {
+      options.Lockout.AllowedForNewUsers = true; // Default true
+      options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(2); // Default 5
+      options.Lockout.MaxFailedAccessAttempts = 3; // Default 5
+
+      options.Password.RequireDigit = false;
+      options.Password.RequireLowercase = false;
+      options.Password.RequireNonAlphanumeric = false;
+      options.Password.RequireUppercase = false;
+      options.Password.RequiredLength = 6;
+      options.Password.RequiredUniqueChars = 1;
     });
   }
 

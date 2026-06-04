@@ -1,5 +1,7 @@
 using CqrsApp.Application.Behaviors;
 using CqrsApp.Application.DependencyInjection.Extentions ;
+using CqrsApp.Persistence.DependencyInjection.Extentions ;
+using CqrsApp.Persistence.DependencyInjection.Options ;
 using FluentValidation;
 using MediatR;
 using Scalar.AspNetCore;
@@ -10,6 +12,7 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 builder.Services.AddConfigureMediatR() ;
+builder.Services.ConfigureSqlServerRetryOptions(builder.Configuration.GetSection(nameof(SqlServerRetryOptions)));
 
 var app = builder.Build();
 
