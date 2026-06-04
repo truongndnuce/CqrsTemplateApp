@@ -8,7 +8,6 @@
 
     <ItemGroup>
       <Folder Include="Abtractions\Message\" />
-      <Folder Include="DependencyInjection\Extentions\" />
       <Folder Include="DependencyInjection\Options\" />
       <Folder Include="Usecases\V1\Commands\Order\" />
       <Folder Include="Usecases\V1\Queries\Order\" />
@@ -17,6 +16,8 @@
 
     <ItemGroup>
       <PackageReference Include="FluentValidation" Version="12.1.1" />
+      <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.1" />
+      <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
       <PackageReference Include="MediatR" Version="14.1.0" />
     </ItemGroup>
 
