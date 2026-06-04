@@ -8,7 +8,8 @@
       "Bash(dotnet ef *)",
       "Bash(dotnet add *)",
       "Bash(dotnet tool *)",
-      "Bash(dir *)"
+      "Bash(dir *)",
+      "Bash(dotnet list *)"
     ]
   }
 }
