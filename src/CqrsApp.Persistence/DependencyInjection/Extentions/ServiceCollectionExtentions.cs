@@ -1,7 +1,9 @@
 ﻿using CqrsApp.Domain;
 using CqrsApp.Domain.Entities.Identity ;
 using CqrsApp.Persistence.DependencyInjection.Options ;
+using CqrsApp.Persistence.Repositories;
 using DemoCICD.Domain.Abstractions;
+using DemoCICD.Domain.Abstractions.Repositories;
 using Microsoft.AspNetCore.Identity ;
 using Microsoft.EntityFrameworkCore ;
 using Microsoft.Extensions.Configuration ;
@@ -59,5 +61,8 @@ public static class ServiceCollectionExtentions
       services.AddOptions<SqlServerRetryOptions>().Bind( section ).ValidateOnStart() ;
    
    public static void AddRepositoryBaseConfiguration(this IServiceCollection services)
-     => services.AddTransient(typeof(IUnitOfWork), typeof(EFUnitOfWork));
+   {
+     services.AddTransient(typeof(IUnitOfWork), typeof(EFUnitOfWork));
+     services.AddTransient(typeof(IRepositoryBase<,>), typeof(RepositoryBase<,>));
+   }
 }
