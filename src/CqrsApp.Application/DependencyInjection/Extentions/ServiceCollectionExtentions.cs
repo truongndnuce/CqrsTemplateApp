@@ -1,4 +1,7 @@
 ﻿using CqrsApp.Application.Behaviors ;
+using CqrsApp.Application.Mapper;
+using CqrsApp.Persistence;
+using DemoCICD.Domain.Abstractions;
 using FluentValidation ;
 using MediatR ;
 using Microsoft.Extensions.DependencyInjection ;
@@ -11,4 +14,9 @@ public static class ServiceCollectionExtentions
     services.AddMediatR( cfg => cfg.RegisterServicesFromAssembly( AssemblyReferences.Assembly ) )
       .AddTransient( typeof( IPipelineBehavior<,> ), typeof( ValidationPipelineBehavior<,> ) )
       .AddValidatorsFromAssembly(Contract.AssemblyReferences.Assembly, includeInternalTypes: false);
+
+  public static IServiceCollection AddConfigurationAutoMapper(this IServiceCollection services)
+      => services.AddAutoMapper(cfg => cfg.AddProfile<ServiceProfile>());
+
+
 }

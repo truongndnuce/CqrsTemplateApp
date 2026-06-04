@@ -1,4 +1,4 @@
-﻿namespace DemoCICD.Domain.Abstractions;
+﻿namespace CqrsApp.Domain;
 
 public interface IUnitOfWork : IAsyncDisposable
 {

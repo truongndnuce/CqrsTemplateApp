@@ -1,7 +1,7 @@
-﻿using CqrsApp.Persistence ;
+﻿using CqrsApp.Domain;
 using DemoCICD.Domain.Abstractions;
 
-namespace DemoCICD.Persistence;
+namespace CqrsApp.Persistence;
 
 public class EFUnitOfWork : IUnitOfWork
 {
