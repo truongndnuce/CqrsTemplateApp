@@ -4,7 +4,11 @@
       "Bash(dotnet build *)",
       "Bash(Select-String -Pattern \"error|warning\")",
       "Bash(Select-Object -First 30)",
-      "PowerShell(dotnet build *)"
+      "PowerShell(dotnet build *)",
+      "Bash(dotnet ef *)",
+      "Bash(dotnet add *)",
+      "Bash(dotnet tool *)",
+      "Bash(dir *)"
     ]
   }
 }

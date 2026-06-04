@@ -1,4 +1,4 @@
-using Contract.Service.V1.Product;
+using CqrsApp.Application.Usecases.V1.Queries.Product;
 using CqrsApp.Domain.Shared;
 using CqrsApp.Presentation.Abstractions;
 using DemoCICD.Contract.Services.V1.Product;
@@ -14,14 +14,12 @@ public class ProductController : ApiController
     {
         
     }
-    [HttpGet(Name = "GetProducts")]
+    [HttpGet]
     [ProducesResponseType(typeof(Result<IEnumerable<Response.ProductResponse>>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> Products()
+    public async Task<IActionResult> GetProducts()
     {
-        //var result = await Sender.Send(new Query.GetProductsQuery());
-        //return Ok(result);
-
-        return null;
+        var result = await Sender.Send(new GetProductQuery());
+        return Ok(result);
     }
 }

@@ -1,27 +1,27 @@
-using CqrsApp.Application.Behaviors;
-using CqrsApp.Application.DependencyInjection.Extentions ;
-using CqrsApp.Persistence.DependencyInjection.Extentions ;
-using CqrsApp.Persistence.DependencyInjection.Options ;
-using FluentValidation;
-using MediatR;
-using Scalar.AspNetCore;
+using CqrsApp.Application.DependencyInjection.Extentions;
+using CqrsApp.Persistence.DependencyInjection.Extentions;
+using CqrsApp.Persistence.DependencyInjection.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
-builder.Services.AddOpenApi();
+builder.Services.AddControllers()
+    .AddApplicationPart(CqrsApp.Presentation.AssemblyReferences.Assembly);
 
-builder.Services.AddConfigureMediatR() ;
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+builder.Services.AddConfigureMediatR();
 builder.Services.ConfigureSqlServerRetryOptions(builder.Configuration.GetSection(nameof(SqlServerRetryOptions)));
 builder.Services.AddSqlConfiguration();
 builder.Services.AddConfigurationAutoMapper();
 builder.Services.AddRepositoryBaseConfiguration();
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
-    app.MapScalarApiReference(endpointPrefix: "/swagger");
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();

@@ -16,7 +16,7 @@ public static class ServiceCollectionExtentions
 {
   public static void AddSqlConfiguration( this IServiceCollection services )
   {
-    services.AddDbContextPool<DbContext, ApplicationDbContext>((provider, builder) =>
+    services.AddDbContextPool<ApplicationDbContext>((provider, builder) =>
     {
       var configuration = provider.GetRequiredService<IConfiguration>();
       var options = provider.GetRequiredService<IOptionsMonitor<SqlServerRetryOptions>>();
