@@ -1,6 +1,7 @@
 ﻿using CqrsApp.Domain;
-using CqrsApp.Domain.Entities.Identity ;
-using CqrsApp.Persistence.DependencyInjection.Options ;
+using CqrsApp.Domain.Abtractions.Repositories;
+using CqrsApp.Domain.Entities.Identity;
+using CqrsApp.Persistence.DependencyInjection.Options;
 using CqrsApp.Persistence.Repositories;
 using DemoCICD.Domain.Abstractions;
 using DemoCICD.Domain.Abstractions.Repositories;
@@ -64,5 +65,6 @@ public static class ServiceCollectionExtentions
    {
      services.AddTransient(typeof(IUnitOfWork), typeof(EFUnitOfWork));
      services.AddTransient(typeof(IRepositoryBase<,>), typeof(RepositoryBase<,>));
+     services.AddTransient<IProductRepository, ProductRepository>();
    }
 }

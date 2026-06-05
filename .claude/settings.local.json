@@ -9,7 +9,9 @@
       "Bash(dotnet add *)",
       "Bash(dotnet tool *)",
       "Bash(dir *)",
-      "Bash(dotnet list *)"
+      "Bash(dotnet list *)",
+      "Bash(Get-ChildItem \"C:\\\\Users\\\\Nguyen_DanTruong\\\\.nuget\\\\packages\\\\microsoft.openapi\\\\2.7.5\\\\lib\" -Recurse -Filter \"*.dll\")",
+      "Bash(Select-Object FullName)"
     ]
   }
 }

@@ -13,6 +13,7 @@ public static class ServiceCollectionExtentions
   public static IServiceCollection AddConfigureMediatR( this IServiceCollection services ) =>
     services.AddMediatR( cfg => cfg.RegisterServicesFromAssembly( AssemblyReferences.Assembly ) )
       .AddTransient( typeof( IPipelineBehavior<,> ), typeof( ValidationPipelineBehavior<,> ) )
+      .AddTransient( typeof( IPipelineBehavior<,> ), typeof( TransactionPipelineBehavior<,> ) )
       .AddValidatorsFromAssembly(Contract.AssemblyReferences.Assembly, includeInternalTypes: false);
 
   public static IServiceCollection AddConfigurationAutoMapper(this IServiceCollection services)

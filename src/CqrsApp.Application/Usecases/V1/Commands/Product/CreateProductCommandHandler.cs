@@ -1,13 +1,25 @@
-using Contract.Abtractions.Message;
-using CqrsApp.Domain.Shared;
-using MediatR;
+﻿using Contract.Abtractions.Message ;
+using Contract.Service.V1.Product ;
+using CqrsApp.Domain ;
+using CqrsApp.Domain.Shared ;
 
 namespace CqrsApp.Application.Usecases.V1.Commands.Product;
 
-public class CreateProductCommandHandler : ICommandHandler<CreateProductCommand>
+public sealed class CreateProductCommandHandler : ICommandHandler<Command.CreateProductCommand>
 {
-    public Task<Result> Handle(CreateProductCommand request, CancellationToken cancellationToken)
+    private readonly IUnitOfWork _unitOfWork;
+
+    public CreateProductCommandHandler(IUnitOfWork unitOfWork)
     {
-        throw new NotImplementedException();
+        _unitOfWork = unitOfWork;
+    }
+
+    public async Task<Result> Handle(Command.CreateProductCommand request, CancellationToken cancellationToken)
+    {
+        var product = CqrsApp.Domain.Entities.Product.CreateProduct(Guid.NewGuid(), request.Name, request.Price, request.Description);
+
+        var result = await _unitOfWork.Products.AddAsync(product);
+
+        return Result.Success(result);
     }
 }
