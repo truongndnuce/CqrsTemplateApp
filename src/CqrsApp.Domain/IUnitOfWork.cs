@@ -1,9 +1,9 @@
-﻿namespace CqrsApp.Domain;
+﻿using CqrsApp.Domain.Abtractions.Repositories;
+
+namespace CqrsApp.Domain;
 
 public interface IUnitOfWork : IAsyncDisposable
 {
-    /// <summary>
-    /// Call save change from db context
-    /// </summary>
+    IProductRepository Products { get; }
     Task SaveChangesAsync(CancellationToken cancellationToken = default);
 }

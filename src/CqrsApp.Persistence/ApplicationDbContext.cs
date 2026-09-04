@@ -10,8 +10,11 @@ namespace CqrsApp.Persistence;
 public sealed class ApplicationDbContext( DbContextOptions<ApplicationDbContext> options )
     : IdentityDbContext<AppUser, AppRole, Guid>( options )
 {
-    protected override void OnModelCreating(ModelBuilder builder) =>
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        base.OnModelCreating(builder);
         builder.ApplyConfigurationsFromAssembly(AssemblyReferences.Assembly);
+    }
 
     public DbSet<AppUser> AppUses { get; set; }
     public DbSet<Action> Actions { get; set; }

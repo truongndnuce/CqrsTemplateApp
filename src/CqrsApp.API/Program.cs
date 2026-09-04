@@ -1,29 +1,58 @@
-using CqrsApp.Application.Behaviors;
-using CqrsApp.Application.DependencyInjection.Extentions ;
-using CqrsApp.Persistence.DependencyInjection.Extentions ;
-using CqrsApp.Persistence.DependencyInjection.Options ;
-using FluentValidation;
-using MediatR;
-using Scalar.AspNetCore;
+using CqrsApp.API.Middleware ;
+using CqrsApp.Application.DependencyInjection.Extentions;
+using CqrsApp.Persistence.DependencyInjection.Extentions;
+using CqrsApp.Persistence.DependencyInjection.Options;
+using Serilog;
 
-var builder = WebApplication.CreateBuilder(args);
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .CreateBootstrapLogger();
 
-builder.Services.AddControllers();
-builder.Services.AddOpenApi();
-
-builder.Services.AddConfigureMediatR() ;
-builder.Services.ConfigureSqlServerRetryOptions(builder.Configuration.GetSection(nameof(SqlServerRetryOptions)));
-builder.Services.AddConfigurationAutoMapper();
-builder.Services.AddRepositoryBaseConfiguration();
-var app = builder.Build();
-
-if (app.Environment.IsDevelopment())
+try
 {
-    app.MapOpenApi();
-    app.MapScalarApiReference(endpointPrefix: "/swagger");
+    Log.Information("Starting application...");
+
+    var builder = WebApplication.CreateBuilder(args);
+
+    builder.Host.UseSerilog((context, services, configuration) =>
+        configuration.ReadFrom.Configuration(context.Configuration)
+                     .ReadFrom.Services(services)
+                     .Enrich.FromLogContext());
+
+    builder.Services.AddControllers()
+        .AddApplicationPart(CqrsApp.Presentation.AssemblyReferences.Assembly);
+
+    builder.Services.AddEndpointsApiExplorer();
+    builder.Services.AddSwaggerGen();
+
+    builder.Services.AddTransient<ExceptionHandlingMiddleware>();
+
+    builder.Services.AddConfigureMediatR();
+    builder.Services.ConfigureSqlServerRetryOptions(builder.Configuration.GetSection(nameof(SqlServerRetryOptions)));
+    builder.Services.AddSqlConfiguration();
+    builder.Services.AddConfigurationAutoMapper();
+    builder.Services.AddRepositoryBaseConfiguration();
+
+    var app = builder.Build();
+    app.UseMiddleware<ExceptionHandlingMiddleware>() ;
+    app.UseSerilogRequestLogging();
+
+    if (app.Environment.IsDevelopment())
+    {
+        app.UseSwagger();
+        app.UseSwaggerUI();
+    }
+
+    app.UseHttpsRedirection();
+    app.MapControllers();
+
+    app.Run();
 }
-
-app.UseHttpsRedirection();
-app.MapControllers();
-
-app.Run();
+catch (Exception ex) when (ex is not HostAbortedException)
+{
+    Log.Fatal(ex, "Application terminated unexpectedly");
+}
+finally
+{
+    Log.CloseAndFlush();
+}

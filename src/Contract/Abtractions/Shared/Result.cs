@@ -18,7 +18,7 @@ public class Result
         Error = error;
     }
 
-    protected bool IsSuccess { get; }
+    public bool IsSuccess { get; }
 
     public bool IsFailure => !IsSuccess;
 
