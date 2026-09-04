@@ -1,6 +1,6 @@
-﻿   using DemoCICD.Contract.Abstractions.Message;
+﻿   using Contract.Abtractions.Message ;
 
-namespace DemoCICD.Contract.Services.V1.Product;
+   namespace Contract.Service.V1.Product;
 
 public static class DomainEvent
 {

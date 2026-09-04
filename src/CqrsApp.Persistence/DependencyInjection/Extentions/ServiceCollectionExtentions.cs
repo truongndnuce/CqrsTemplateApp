@@ -1,4 +1,5 @@
 ﻿using CqrsApp.Domain;
+using CqrsApp.Domain.Abtractions.Dappers;
 using CqrsApp.Domain.Abtractions.Repositories;
 using CqrsApp.Domain.Entities.Identity;
 using CqrsApp.Persistence.DependencyInjection.Options;
@@ -63,8 +64,9 @@ public static class ServiceCollectionExtentions
    
    public static void AddRepositoryBaseConfiguration(this IServiceCollection services)
    {
-     services.AddTransient(typeof(IUnitOfWork), typeof(EFUnitOfWork));
+     services.AddTransient(typeof(CqrsApp.Domain.IUnitOfWork), typeof(EFUnitOfWork));
      services.AddTransient(typeof(IRepositoryBase<,>), typeof(RepositoryBase<,>));
      services.AddTransient<IProductRepository, ProductRepository>();
+     services.AddTransient<ISqlConnectionFactory, SqlConnectionFactory>();
    }
 }

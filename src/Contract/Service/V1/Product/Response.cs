@@ -1,4 +1,4 @@
-﻿namespace DemoCICD.Contract.Services.V1.Product;
+﻿namespace Contract.Service.V1.Product;
 
 public static class Response
 {

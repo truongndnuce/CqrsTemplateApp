@@ -1,3 +1,4 @@
+using CqrsApp.API.Middleware ;
 using CqrsApp.Application.DependencyInjection.Extentions;
 using CqrsApp.Persistence.DependencyInjection.Extentions;
 using CqrsApp.Persistence.DependencyInjection.Options;
@@ -24,6 +25,8 @@ try
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
 
+    builder.Services.AddTransient<ExceptionHandlingMiddleware>();
+
     builder.Services.AddConfigureMediatR();
     builder.Services.ConfigureSqlServerRetryOptions(builder.Configuration.GetSection(nameof(SqlServerRetryOptions)));
     builder.Services.AddSqlConfiguration();
@@ -31,7 +34,7 @@ try
     builder.Services.AddRepositoryBaseConfiguration();
 
     var app = builder.Build();
-
+    app.UseMiddleware<ExceptionHandlingMiddleware>() ;
     app.UseSerilogRequestLogging();
 
     if (app.Environment.IsDevelopment())

@@ -1,6 +1,6 @@
-﻿using MediatR;
+﻿using MediatR ;
 
-namespace DemoCICD.Contract.Abstractions.Message;
+namespace Contract.Abtractions.Message;
 
 public interface IDomainEventHandler<TEvent> : INotificationHandler<TEvent>
     where TEvent : IDomainEvent

@@ -1,0 +1,305 @@
+[2026-06-05 10:17:58.964 ERR] [2] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5001: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+[2026-06-05 10:17:59.053 FTL] [2] Application terminated unexpectedly
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5001: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Program.<Main>$(String[] args) in C:\Dan Truong\CqrsTemplateApp\src\CqrsApp.API\Program.cs:line 47
+[2026-06-05 10:18:25.636 ERR] [2] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5001: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+[2026-06-05 10:18:25.699 FTL] [2] Application terminated unexpectedly
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5001: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Program.<Main>$(String[] args) in C:\Dan Truong\CqrsTemplateApp\src\CqrsApp.API\Program.cs:line 47
+[2026-06-05 10:18:55.607 ERR] [12] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No service for type 'CqrsApp.API.Middleware.ExceptionHandlingMiddleware' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Http.MiddlewareFactory.Create(Type middlewareType)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+[2026-06-05 10:18:55.752 ERR] [12] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No service for type 'CqrsApp.API.Middleware.ExceptionHandlingMiddleware' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Http.MiddlewareFactory.Create(Type middlewareType)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+[2026-06-05 10:25:54.654 INF] [14] HTTP GET /swagger/index.html responded 200 in 107.7844 ms
+[2026-06-05 10:25:54.696 INF] [12] HTTP GET /swagger/index.js responded 304 in 0.5347 ms
+[2026-06-05 10:25:54.720 INF] [20] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 304 in 23.8130 ms
+[2026-06-05 10:25:54.720 INF] [15] HTTP GET /swagger/swagger-ui.css responded 304 in 48.9172 ms
+[2026-06-05 10:25:54.720 INF] [17] HTTP GET /swagger/swagger-ui-bundle.js responded 304 in 23.9000 ms
+[2026-06-05 10:25:54.720 INF] [18] HTTP GET /swagger/index.css responded 304 in 23.8861 ms
+[2026-06-05 10:25:54.847 INF] [17] HTTP GET /swagger/favicon-32x32.png responded 200 in 1.8801 ms
+[2026-06-05 10:25:54.944 INF] [18] HTTP GET /swagger/v1/swagger.json responded 200 in 102.8316 ms
+[2026-06-05 11:15:19.783 INF] [14] HTTP GET /swagger/index.html responded 304 in 72.2321 ms
+[2026-06-05 11:15:20.048 INF] [19] HTTP GET /swagger/index.js responded 304 in 0.8172 ms
+[2026-06-05 11:15:20.058 INF] [12] HTTP GET /swagger/index.css responded 304 in 140.7222 ms
+[2026-06-05 11:15:20.058 INF] [15] HTTP GET /swagger/swagger-ui.css responded 304 in 140.5164 ms
+[2026-06-05 11:15:20.058 INF] [18] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 304 in 10.4864 ms
+[2026-06-05 11:15:20.058 INF] [17] HTTP GET /swagger/swagger-ui-bundle.js responded 304 in 57.0721 ms
+[2026-06-05 11:15:20.443 INF] [17] HTTP GET /swagger/v1/swagger.json responded 200 in 265.6931 ms
+[2026-06-05 13:08:46.199 INF] [15] HTTP GET /swagger/index.html responded 304 in 2.6517 ms
+[2026-06-05 13:08:46.243 INF] [15] HTTP GET /swagger/swagger-ui.css responded 304 in 0.8203 ms
+[2026-06-05 13:08:46.248 INF] [19] HTTP GET /swagger/index.css responded 304 in 0.0943 ms
+[2026-06-05 13:08:46.251 INF] [15] HTTP GET /swagger/swagger-ui-bundle.js responded 304 in 0.0641 ms
+[2026-06-05 13:08:46.253 INF] [20] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 304 in 0.0919 ms
+[2026-06-05 13:08:46.254 INF] [36] HTTP GET /swagger/index.js responded 304 in 0.3355 ms
+[2026-06-05 13:08:46.364 INF] [36] HTTP GET /swagger/v1/swagger.json responded 200 in 21.9590 ms
+[2026-06-05 13:09:13.282 WRN] [35] Failed to determine the https port for redirect.
+[2026-06-05 13:09:13.342 WRN] [35] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+[2026-06-05 13:09:14.387 WRN] [35] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2026-06-05 13:09:14.467 WRN] [35] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-06-05 13:09:15.824 INF] [19] HTTP POST /api/v1/Product responded 200 in 2551.7003 ms
+[2026-06-05 13:13:10.099 INF] [16] HTTP GET /swagger/index.html responded 304 in 248.9577 ms
+[2026-06-05 13:13:10.300 INF] [15] HTTP GET /swagger/index.js responded 304 in 78.6278 ms
+[2026-06-05 13:13:10.386 INF] [16] HTTP GET /swagger/index.css responded 304 in 164.9065 ms
+[2026-06-05 13:13:10.386 INF] [12] HTTP GET /swagger/swagger-ui.css responded 304 in 135.8482 ms
+[2026-06-05 13:13:10.386 INF] [14] HTTP GET /swagger/swagger-ui-bundle.js responded 304 in 164.3168 ms
+[2026-06-05 13:13:10.386 INF] [17] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 304 in 134.8840 ms
+[2026-06-05 13:13:10.810 INF] [17] HTTP GET /swagger/v1/swagger.json responded 200 in 295.2784 ms
+[2026-06-05 13:13:43.649 WRN] [23] Failed to determine the https port for redirect.
+[2026-06-05 13:13:43.723 WRN] [23] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+[2026-06-05 13:13:44.996 ERR] [23] HTTP GET /api/v1/Product responded 500 in 1365.6009 ms
+System.InvalidOperationException: No service for type 'MediatR.IRequestHandler`2[Contract.Service.V1.Product.Query+GetProductQuery,CqrsApp.Domain.Shared.Result`1[DemoCICD.Contract.Services.V1.Product.Response+ProductResponse]]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0(CancellationToken t)
+   at CqrsApp.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Dan Truong\CqrsTemplateApp\src\CqrsApp.Application\Behaviors\TransactionPipelineBehavior.cs:line 25
+   at CqrsApp.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Dan Truong\CqrsTemplateApp\src\CqrsApp.Application\Behaviors\ValidationPipeLineBehavior.cs:line 23
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.Handle(Object request, IServiceProvider serviceProvider, CancellationToken cancellationToken)
+   at CqrsApp.Presentation.Controller.V1.ProductController.GetProducts() in C:\Dan Truong\CqrsTemplateApp\src\CqrsApp.Presentation\Controller\V1\ProductController.cs:line 21
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[2026-06-05 13:13:45.108 ERR] [23] No service for type 'MediatR.IRequestHandler`2[Contract.Service.V1.Product.Query+GetProductQuery,CqrsApp.Domain.Shared.Result`1[DemoCICD.Contract.Services.V1.Product.Response+ProductResponse]]' has been registered.
+System.InvalidOperationException: No service for type 'MediatR.IRequestHandler`2[Contract.Service.V1.Product.Query+GetProductQuery,CqrsApp.Domain.Shared.Result`1[DemoCICD.Contract.Services.V1.Product.Response+ProductResponse]]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0(CancellationToken t)
+   at CqrsApp.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Dan Truong\CqrsTemplateApp\src\CqrsApp.Application\Behaviors\TransactionPipelineBehavior.cs:line 25
+   at CqrsApp.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Dan Truong\CqrsTemplateApp\src\CqrsApp.Application\Behaviors\ValidationPipeLineBehavior.cs:line 23
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.Handle(Object request, IServiceProvider serviceProvider, CancellationToken cancellationToken)
+   at CqrsApp.Presentation.Controller.V1.ProductController.GetProducts() in C:\Dan Truong\CqrsTemplateApp\src\CqrsApp.Presentation\Controller\V1\ProductController.cs:line 21
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at CqrsApp.API.Middleware.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Dan Truong\CqrsTemplateApp\src\CqrsApp.API\Middleware\ExceptionHandlingMiddleware.cs:line 17
+[2026-06-05 13:15:04.150 INF] [12] HTTP GET /swagger/index.html responded 304 in 57.7031 ms
+[2026-06-05 13:15:04.347 INF] [20] HTTP GET /swagger/index.js responded 304 in 10.5840 ms
+[2026-06-05 13:15:04.363 INF] [18] HTTP GET /swagger/swagger-ui-bundle.js responded 304 in 26.8221 ms
+[2026-06-05 13:15:04.363 INF] [19] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 304 in 26.7554 ms
+[2026-06-05 13:15:04.363 INF] [15] HTTP GET /swagger/index.css responded 304 in 121.6709 ms
+[2026-06-05 13:15:04.363 INF] [12] HTTP GET /swagger/swagger-ui.css responded 304 in 121.6720 ms
+[2026-06-05 13:15:04.456 INF] [12] HTTP GET /swagger/favicon-32x32.png responded 304 in 0.9115 ms
+[2026-06-05 13:15:04.557 INF] [17] HTTP GET /swagger/v1/swagger.json responded 200 in 104.6249 ms
+[2026-06-05 13:15:09.319 WRN] [19] Failed to determine the https port for redirect.
+[2026-06-05 13:15:09.370 WRN] [19] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+[2026-06-05 13:15:09.998 ERR] [19] HTTP GET /api/v1/Product responded 500 in 684.4776 ms
+System.InvalidOperationException: No service for type 'MediatR.IRequestHandler`2[Contract.Service.V1.Product.Query+GetProductQuery,CqrsApp.Domain.Shared.Result`1[Contract.Service.V1.Product.Response+ProductResponse]]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0(CancellationToken t)
+   at CqrsApp.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Dan Truong\CqrsTemplateApp\src\CqrsApp.Application\Behaviors\TransactionPipelineBehavior.cs:line 25
+   at CqrsApp.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Dan Truong\CqrsTemplateApp\src\CqrsApp.Application\Behaviors\ValidationPipeLineBehavior.cs:line 23
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.Handle(Object request, IServiceProvider serviceProvider, CancellationToken cancellationToken)
+   at CqrsApp.Presentation.Controller.V1.ProductController.GetProducts() in C:\Dan Truong\CqrsTemplateApp\src\CqrsApp.Presentation\Controller\V1\ProductController.cs:line 21
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[2026-06-05 13:15:10.063 ERR] [19] No service for type 'MediatR.IRequestHandler`2[Contract.Service.V1.Product.Query+GetProductQuery,CqrsApp.Domain.Shared.Result`1[Contract.Service.V1.Product.Response+ProductResponse]]' has been registered.
+System.InvalidOperationException: No service for type 'MediatR.IRequestHandler`2[Contract.Service.V1.Product.Query+GetProductQuery,CqrsApp.Domain.Shared.Result`1[Contract.Service.V1.Product.Response+ProductResponse]]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0(CancellationToken t)
+   at CqrsApp.Application.Behaviors.TransactionPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Dan Truong\CqrsTemplateApp\src\CqrsApp.Application\Behaviors\TransactionPipelineBehavior.cs:line 25
+   at CqrsApp.Application.Behaviors.ValidationPipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Dan Truong\CqrsTemplateApp\src\CqrsApp.Application\Behaviors\ValidationPipeLineBehavior.cs:line 23
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.Handle(Object request, IServiceProvider serviceProvider, CancellationToken cancellationToken)
+   at CqrsApp.Presentation.Controller.V1.ProductController.GetProducts() in C:\Dan Truong\CqrsTemplateApp\src\CqrsApp.Presentation\Controller\V1\ProductController.cs:line 21
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at CqrsApp.API.Middleware.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Dan Truong\CqrsTemplateApp\src\CqrsApp.API\Middleware\ExceptionHandlingMiddleware.cs:line 17
+[2026-06-05 13:18:46.354 INF] [14] HTTP GET /swagger/index.html responded 304 in 128.0051 ms
+[2026-06-05 13:18:46.567 INF] [18] HTTP GET /swagger/index.js responded 304 in 38.9702 ms
+[2026-06-05 13:18:46.580 INF] [19] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 304 in 49.7556 ms
+[2026-06-05 13:18:46.580 INF] [14] HTTP GET /swagger/index.css responded 304 in 122.7978 ms
+[2026-06-05 13:18:46.580 INF] [12] HTTP GET /swagger/swagger-ui.css responded 304 in 94.1337 ms
+[2026-06-05 13:18:46.580 INF] [17] HTTP GET /swagger/swagger-ui-bundle.js responded 304 in 52.2336 ms
+[2026-06-05 13:18:46.827 INF] [17] HTTP GET /swagger/v1/swagger.json responded 200 in 141.3014 ms
+[2026-06-05 13:18:52.202 WRN] [17] Failed to determine the https port for redirect.
+[2026-06-05 13:18:52.251 WRN] [17] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+[2026-06-05 13:18:52.575 WRN] [17] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+[2026-06-05 13:18:53.181 WRN] [17] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2026-06-05 13:18:53.237 WRN] [17] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-06-05 13:18:54.651 INF] [19] HTTP GET /api/v1/Product responded 200 in 2457.3994 ms
+[2026-06-05 13:37:12.654 INF] [12] HTTP GET /swagger/index.html responded 304 in 73.9615 ms
+[2026-06-05 13:37:12.825 INF] [20] HTTP GET /swagger/index.js responded 304 in 7.7926 ms
+[2026-06-05 13:37:12.840 INF] [12] HTTP GET /swagger/swagger-ui.css responded 304 in 87.9111 ms
+[2026-06-05 13:37:12.840 INF] [16] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 304 in 22.7298 ms
+[2026-06-05 13:37:12.840 INF] [15] HTTP GET /swagger/index.css responded 304 in 87.9228 ms
+[2026-06-05 13:37:12.841 INF] [18] HTTP GET /swagger/swagger-ui-bundle.js responded 304 in 24.2717 ms
+[2026-06-05 13:37:13.159 INF] [18] HTTP GET /swagger/v1/swagger.json responded 200 in 146.9019 ms
+[2026-06-05 13:37:22.999 WRN] [20] Failed to determine the https port for redirect.
+[2026-06-05 13:37:23.049 WRN] [20] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+[2026-06-05 13:37:23.948 INF] [20] Request Details: GetProductDapperQuery (559 milliseconds) {"$type":"GetProductDapperQuery"}
+[2026-06-05 13:37:24.024 INF] [20] HTTP GET /api/v1/Product/dapper responded 200 in 1045.0032 ms
+[2026-06-05 13:42:10.025 WRN] [25] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+[2026-06-05 13:42:10.943 WRN] [25] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2026-06-05 13:42:11.015 WRN] [25] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-06-05 13:42:11.915 INF] [28] HTTP GET /api/v1/Product responded 200 in 2005.2637 ms
+[2026-06-05 14:40:55.458 INF] [16] HTTP GET /swagger/index.html responded 304 in 224.1855 ms
+[2026-06-05 14:40:55.682 INF] [17] HTTP GET /swagger/index.js responded 304 in 2.2388 ms
+[2026-06-05 14:40:55.734 INF] [16] HTTP GET /swagger/index.css responded 304 in 102.4079 ms
+[2026-06-05 14:40:55.734 INF] [15] HTTP GET /swagger/swagger-ui.css responded 304 in 101.4445 ms
+[2026-06-05 14:40:55.734 INF] [14] HTTP GET /swagger/swagger-ui-bundle.js responded 304 in 100.1118 ms
+[2026-06-05 14:40:55.734 INF] [19] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 304 in 54.7183 ms
+[2026-06-05 14:40:56.185 INF] [19] HTTP GET /swagger/v1/swagger.json responded 200 in 327.7658 ms
+[2026-06-05 14:41:11.817 WRN] [19] Failed to determine the https port for redirect.
+[2026-06-05 14:41:11.937 WRN] [19] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+[2026-06-05 14:41:14.564 WRN] [19] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2026-06-05 14:41:14.756 WRN] [19] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-06-05 14:41:16.822 INF] [20] [SendMail] Product created - To: admin@shop.com | Subject: New product added | Body: Product with Id="155ff46b-5e5e-4be6-a3c6-71a2a6ad4cd1" has been successfully created.
+[2026-06-05 14:41:16.942 INF] [20] HTTP POST /api/v1/Product responded 200 in 5152.1286 ms
